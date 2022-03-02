@@ -1,0 +1,12 @@
+-------What i use to create tamplate------
+-No FrameWork
+-Many Plugins
+-JQuery For Plugins
+-UI/UX Sketches
+-Mind Mapping
+-My Vs Code Extensions
+------for recharche for template-------
+landing page inspiration
+
+-----add normalize.css----------
+Kaygad lik desing dlpage

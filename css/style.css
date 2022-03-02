@@ -1,0 +1,1212 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); 
+
+:root {
+    --main--color: #ff9800;
+    --main--back-color:#EEE;
+    /*  */
+    --main--text--color: #fffafa;
+    --title--color: #666;
+    /*  */
+    --text-color:#767676;
+    /*  */
+    --main-title-size : 30px;
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    /* width: 1170px; */
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+/******************************************************* start  button top  *****************************************************/
+.scrollUp {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: -50px;
+    background-color: var(--main--color);
+    padding: 2px;
+    border-radius: 8px;
+    opacity: 0.8;
+    z-index: 200;
+    transition: 0.4s;
+}
+
+.scrollUp:hover {
+    opacity: 1;
+}
+.scrollUp__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;    
+    color: var(--main--text--color);
+    transform: translate(-50%,-50%);
+}
+
+.show-scrollUp {
+    bottom: 80px;
+}
+/******************************************************* End  button top  *****************************************************/
+
+/******************************************************* Start Settings Box  *****************************************************/
+.settings-box {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    background-color: var(--main--text--color);
+    width: 200px;
+    z-index: 800;
+    min-height: 100vh;
+    transition: .3s;
+    border-radius: 0px 8px 8px 0px;
+    border :1px solid var(--main--back-color);
+}
+
+.settings-box .toggle-settings {
+    position: absolute;
+    right: -25px;
+    top: 15%;
+    background-color: var(--main--text--color);
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;  
+    border-radius:0% 12px 12px 0%; 
+}
+
+.settings-box .toggle-settings .fa-cog {
+    padding: 9px 0;
+    width: 25px;
+}
+
+.settings-box.open {
+    left: 0;
+}
+/*******************************************************/
+.settings-box .settings-container .option-box {
+    padding: 4px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--main--back-color);
+}
+
+.settings-box .settings-container .option-box h4 {
+    margin: 0;
+    color: var(--title--color);
+    font-size: v;
+}
+
+.settings-box .settings-container .option-box .colors-list {
+    list-style: none;
+    text-align: center;
+    margin: 10px 0 0;
+    padding: 0;
+    
+}
+
+.settings-box .settings-container .option-box .colors-list li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: .5;
+    display: inline-block;
+    border: 3px solid var(--main--back-color);
+}
+
+.settings-box .settings-container .option-box .colors-list li.active {
+    opacity: 1;
+    border-color:var(--main--text--color) ;
+}
+
+.settings-box .settings-container .option-box .colors-list li:hover {
+    opacity: 1;
+}
+
+.settings-box .settings-container .option-box .colors-list li:first-child {
+    background-color: #ff9800;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(2) {
+    background-color: #03a9f4;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(3) {
+    background-color: #9c27b0;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(4) {
+    background-color: #4caf50;
+}
+
+.settings-box .settings-container .option-box .colors-list li:last-child {
+    background-color:#DC143C ;
+}
+/*******************************************************/
+.settings-box .settings-container .option-box  .yes,
+.settings-box .settings-container .option-box  .no {
+    width: 60px;
+    background-color: var(--main--color);
+    color: var(--main--text--color);
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius:10px ;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.settings-box .settings-container .option-box  span.active {
+    opacity: 1;
+}
+
+.settings-box .settings-container .option-box  span:hover {
+    opacity: 1;
+}
+
+.settings-box .settings-container .reset-option {
+    background-color: #ccc;
+    border: none;
+    width: 178px;
+    margin: 10px auto;
+    display: block;
+    color: var(--main--color);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.settings-box .settings-container .reset-option:hover {
+    background-color: var(--main--color);
+    color: #ccc;
+}
+/********************************************************* End Settings Box *******************************************************/
+
+/******************************************************* Start Nav Bullets  *****************************************************/
+.nav-bullets {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 1000;
+
+}
+
+.nav-bullets .bullet {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--main--color);
+    margin: 20px auto;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-bullets .bullet:hover .tooltip {
+    display: block;
+}
+
+.nav-bullets .bullet .tooltip {
+    background-color: var(--main--color);
+    width: 120px;
+    color: #FFF;
+    padding: 8px 10px;
+    position: absolute;
+    right: 32px;
+    top: -10px;
+    text-align: center;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+}
+
+.nav-bullets .bullet .tooltip::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--main--color);
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/********************************************************* End Nav Bullets *******************************************************/
+
+/******************************************************* Start Landing Page *******************************************************/
+.landing-page {
+    min-height: 100vh;
+    background-image: url("../imgs/01.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.landing-page .container{
+    position: relative;
+    z-index: 500;
+}
+
+.landing-page .overlay {
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.header-area {
+    position: relative;
+    z-index: 2;
+    color: var(--main--text--color);
+    display: flex;
+    padding: 10px;
+} 
+
+.scroll-header {
+    background-color: var(--text-color);
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: .3s;
+    
+}
+
+@media (min-width:992px) {
+    .scroll-header {
+        padding-left: 80px;
+        padding-right: 80px;
+        
+    }
+}
+.header-area .logo {
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header-area .logo span {
+    color: var(--main--color);
+    font-size: 24px;
+}
+
+.header-area .links-container {
+    width: 100%;
+    text-align: right;
+}
+
+.header-area .links {
+    list-style: none;   
+    padding: 0;
+    text-align: right;
+    padding-left: 0;
+    font-size: 20px;
+}
+
+.header-area .links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.header-area .links li a {
+    color: var(--main--text--color);
+    text-decoration: none;
+}
+
+.header-area .links li a:hover,
+.header-area .links li .link-active {
+    color: var(--main--color);
+    transition: .3s;
+}
+
+
+.header-area .toggle-menu {
+    background: none;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: none;
+    position: relative;
+}
+
+.header-area .toggle-menu.menu-active:before {
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    bottom: -26px;
+    left: 5px;
+    border-radius: 4px;
+    text-align: right;
+} 
+
+.header-area .toggle-menu:focus {
+    outline: none;
+}
+
+.header-area .toggle-menu span{
+    display: block;
+    background-color: #FFF;
+    height: 4px;
+    margin-bottom: 4px;
+}
+
+
+.introduction-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: var(--main--text--color);
+    text-align: center;
+    width: 95%;
+}
+
+.introduction-text h1 {
+    font-size: var(--main-title-size);
+    margin: 0;
+}
+
+.introduction-text h3 {
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: var(--main--color) ;
+    margin: 0 0 25px;
+}
+
+@media (max-width: 575px) {
+    .introduction-text h3 {
+        font-size: 20px;
+    }
+}
+
+
+.introduction-text p {
+    line-height: 1.6;
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width:991px) {
+    .header-area .links {
+        display: none;
+    }
+
+    .header-area .links.open {
+        background-color: #fff;
+        padding: 10px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top:50px;
+        width: 100%;
+        border-radius: 4px;
+        text-align: left;      
+    }
+
+    .header-area .links.open li {
+        display: block;
+        margin: 10px;
+    }
+
+    .header-area .links.open li a {
+        color: var(--main--color);
+        font-weight: bold;
+    }
+
+    .header-area .toggle-menu {
+        display: inline-block;
+    }
+}
+/********************************************************* End Landing Page *******************************************************/
+
+/********************************************************* Start About US ********************************************************/
+.about-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .about-us {
+        display: block;
+        text-align: center;
+    }
+}
+
+.about-us .info-box {
+    flex: 1;
+    padding: 30px;
+}
+
+@media (max-width: 767px) {
+    .about-us .info-box {
+        padding: 0;
+    }
+}
+
+.about-us .info-box h2 {
+    font-weight: bold; 
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+}
+
+.about-us .info-box h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 30px;
+}
+
+.about-us .info-box p {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0 ;
+    font-size: 18px;
+}
+
+.about-us .image-box {
+    flex: 1;
+    text-align: center;
+}
+
+.about-us .image-box img {
+    width: 350px;
+}
+
+/********************************************************* End About US *********************************************************/
+
+/********************************************************* start skills *********************************************************/
+.skills {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--main--back-color);
+}
+
+.skills h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+    text-align: center;
+}
+
+.skills h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+.skills .skill-box {
+    background-color: var(--main--text--color);
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .skills .skill-box {
+        display: block;
+    }
+}
+
+.skills .skill-box .Skills-name {
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    line-height: 25px;
+}
+
+@media (max-width: 767px) {
+    .skills .skill-box .Skills-name {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.skills .skill-box .Skills-prograss {
+    width: 100%;
+    height: 25px;
+    background-color: var(--main--back-color);
+    border-radius: 0px 10px 10px 0px ;
+    position: relative;
+}
+
+.skills .skill-box .Skills-prograss span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--main--color);
+    border-radius: 0px 10px 10px 0px ;
+    transition: all .3s;
+}
+
+@media (max-width: 767px) {
+    .skills .skill-box .Skills-prograss span {
+        border-radius: 10px
+    }
+}
+
+/********************************************************* End skills **********************************************************/
+
+/*************************************************** Start  Our Gallery *******************************************************/
+.gallery {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+    text-align: center;
+}
+
+.gallery h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+.gallery .images-box {
+    text-align: center;
+}
+
+.gallery .images-box img {
+    width: 200px;
+    padding: 3px;
+    background-color: var(--main--back-color);
+    border: 1px solid #CCC;
+    margin: 5px;
+    cursor: pointer;
+} 
+
+.gallery .images-box img:hover { 
+    opacity: .7;
+}
+
+.popup-overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.popup-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--main--back-color);
+    border: 1px solid #CCC;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.popup-box h3 {
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 20px;
+    color:  var(--main--color);
+}
+
+.popup-box img {
+    max-width: 100%;
+}
+
+.popup-box .close-button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--main--color);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--main--text--color);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, Tahoma;
+    border-radius: 50%;
+}
+/*************************************************** End Our Gallery *******************************************************/
+
+
+/*************************************************** Start TimeLine *******************************************************/
+.timeline {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--main--back-color);
+}
+
+.timeline h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+    text-align: center;
+}
+
+.timeline h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+.timeline .timeline-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline .timeline-content:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--main--color);
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 0;    
+
+}
+
+.timeline .timeline-content .year {
+    margin: 20px auto;
+    width: 90px;
+    background-color: var(--main--color);
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--main--text--color);
+    padding: 2px 5px;
+    font-weight: bold;
+}
+
+.timeline .timeline-content .left,
+.timeline .timeline-content .right {
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .timeline .timeline-content .left ,
+    .timeline .timeline-content .right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.timeline .timeline-content .left {
+    float: left;
+}
+
+
+.timeline .timeline-content .right{
+    float: right;
+}
+
+.timeline .timeline-content .left::before ,
+.timeline .timeline-content .right::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: var(--main--text--color);
+    border: 3px solid var(--main--color);
+    position: absolute;
+    border-radius: 50%;
+    top: 20px;
+}
+
+@media (max-width: 767px) {
+    .timeline .timeline-content .left::before ,
+    .timeline .timeline-content .right::before {
+        display: none;
+    }
+}
+
+.timeline .timeline-content .left::before {
+    right: -35px;
+}
+.timeline .timeline-content .right::before {
+    left: -35px;
+}
+
+.timeline .timeline-content .content {
+    padding: 20px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.timeline .timeline-content .content h3 {
+    font-weight: bold;
+    color: var(--main--color);
+    margin: 0 0 10px;
+}
+
+
+.timeline .timeline-content .content p {
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.timeline .timeline-content .left .content::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--main--text--color);
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+
+.timeline .timeline-content .right .content::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent var(--main--text--color) transparent transparent ;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+}
+
+@media (max-width: 767px) {
+    .timeline .timeline-content .left .content::before ,
+    .timeline .timeline-content .right .content::before {
+        display: none;
+    }
+}
+
+/*************************************************** End TimeLine *********************************************************/
+
+/*************************************************** Start Features *********************************************************/
+.features {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.features h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+.features .feat-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 991px) {
+    .features .feat-box {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 575px) {
+    .features .feat-box {
+        width: 100%;
+    }
+}
+
+.features .feat-box img {
+    width: 96px;
+}
+
+.features .feat-box  h4 {
+    font-size: 22px;
+    margin: 15px 0 40px;
+    position: relative;
+}
+
+.features .feat-box  h4::before {
+    content: "";
+    width: 40px;
+    height: 4px;
+    background-color: var(--main--color);
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: -22px;
+}
+
+.features .feat-box  p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: var(--text-color);
+
+}
+/*************************************************** End Features *********************************************************/
+
+/*************************************************** Start Testimonials *********************************************************/
+.testimonial-container .testimonials h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--back-color);
+    margin: 0;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .testimonial-container .testimonials h2 {
+        text-align: center;
+    }
+}
+
+.testimonial-container .testimonials h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+@media (max-width: 767px) {
+    .testimonial-container .testimonials h3 {
+        text-align: center;
+    }
+}
+
+.testimonials {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+}
+
+.testimonials::before {
+    content: "";
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color:var(--main--color) ;
+    height: 100%;
+}
+.testimonials::after {
+    content: "";
+    content: "";
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #333;
+    height: 100%;
+}
+
+.testimonials .ts-box {
+    position: relative;
+    z-index: 2;
+    width: calc(98% / 3);
+    float: left;
+    background-color: var(--main--back-color);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonials .ts-box:not(:last-of-type){
+    margin-right: 1%;
+}
+
+.testimonials .ts-box > p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.testimonials .ts-box .person-info {
+    overflow: hidden;
+}
+
+
+@media (max-width: 767px) {
+    .testimonials .ts-box {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .testimonials .ts-box .person-info {
+        text-align: center;
+        overflow: visible;
+    }
+}
+
+.testimonials .ts-box .person-info img {
+    float: left;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+@media (max-width: 991px) {
+    .testimonials .ts-box .person-info img {
+        float: none;
+        margin-right: 0;
+    }
+}
+
+.testimonials .ts-box .person-info h4 {
+    color: var(--main--color);
+    font-weight: bold;
+    font-size: 19px;
+    margin: 14px 0 10px ;
+}
+.testimonials .ts-box .person-info p {
+    color: var(--text-color);
+    margin: 0;
+}
+
+/*************************************************** End Testimonials *********************************************************/
+
+/******************************************************* Start Contact  *****************************************************/
+.contact {
+    min-height: 550px ;
+    background-image: url("../img/Contact.jpg");
+    background-size: contain;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.contact .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
+}
+.contact h2 {
+    font-weight: bold;
+    font-size: var(--main-title-size);
+    color: var(--main--color);
+    margin: 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.contact h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6a6d7c;
+    margin: 10px 0 50px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.contact form {
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact form .left {
+    float: left;
+    width: 49%;
+}
+
+.contact form .right {
+    float: right;
+    width: 49%;
+}
+
+@media (max-width: 767px) {
+    .contact form .left,
+    .contact form .right {
+        float: none;
+        width: 100%;
+    }
+}
+
+.contact form input:not([type="submit"]),
+.contact form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: rgba(218, 218, 218, 0.19);
+}
+
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus {
+    outline: none !important;
+    border:1px solid var(--main--color);
+}
+
+.contact form input {
+    height: 40px;
+}
+
+.contact form textarea {
+    height: 150px;
+}
+
+.contact form input[type="submit"]  {
+    padding: 10px;
+    width: 100%;
+    border-color: transparent;
+    background-color: #ccc;
+    color: var(--main--color);
+    cursor: pointer;
+}
+
+.contact form input[type="submit"]:hover {
+    background-color: var(--main--color);
+    color: #fff;
+}
+
+.contact form textarea:focus::-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+
+.contact form textarea:focus::-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+
+.contact form textarea:focus:-ms-input-placeholder,
+.contact form input:not([type="submit"]):focus:-ms-input-placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+
+.contact form textarea:focus::placeholder,
+.contact form input:not([type="submit"]):focus::placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+/********************************************************* End Contact *******************************************************/
+/********************************************************* Start Grid System *******************************************************/
+ @media (min-width:576px) { /* Small Devices => Landdcape Phones */
+    .container {
+        max-width: 540px;
+    }  
+}
+@media (min-width:768px) { /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }  
+}
+@media (min-width:992px) { /* Desktops */
+    .container {
+        max-width: 960px;
+    }  
+}
+@media (min-width:1200px) { /* Large Screen */
+    .container {
+        max-width: 1140px;
+    }  
+}
+/********************************************************* End Grid System *******************************************************/
+
+/******************************************************** Start Footer *******************************************************/
+.footer {
+    min-height: 250px;
+    background-color: var(--main--color);
+    color: var(--main--back-color);
+    padding: 20px;
+    position: relative;
+}
+
+.footer .heading-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media (max-width:767px) { /* Medium Devices => Tablets */
+    .footer .heading-text {
+        font-size: 14px;
+    }  
+}
+
+/********************************************************* End Footer *******************************************************/
+
+
+
